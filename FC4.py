@@ -17,7 +17,7 @@ if st.__version__ == "0.86.0":
     st.button = st.experimental_singleton(st.button)
 
 # Set your OpenAI API key here
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Function to upload Parquet file on Streamlit
 def upload_parquet_file():
