@@ -187,6 +187,12 @@ def describe_dataset_with_chatgpt(df):
         st.subheader("Sample Dataset Description:")
         st.markdown(generated_text)
 
+def get_download_link(df, file_name, text="Download CSV"):
+    csv = df.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()  # B64 encoding
+    href = f'<a href="data:file/csv;base64,{b64}" download="{file_name}">{text}</a>'
+    return href
+
 # Streamlit App
 def main():
     st.title("Finance Fraud Detection - Data Upload, Display, and Transformations")
